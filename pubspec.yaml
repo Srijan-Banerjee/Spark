@@ -1,0 +1,44 @@
+name: spark
+description: "Spark — real-time activity signals for the people you trust."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.14.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Firebase
+  firebase_core: ^4.4.0
+  firebase_auth: ^6.1.0
+  firebase_database: ^12.1.0
+
+  # State
+  flutter_riverpod: ^2.6.1
+
+  # UI
+  google_fonts: ^6.2.1
+  timeago: ^3.7.0
+  intl: ^0.20.2
+
+  # Local prefs
+  shared_preferences: ^2.3.5
+
+dependency_overrides:
+  # 2026's 2.5.x line of shared_preferences_android (and 2.3.x of
+  # path_provider_android) migrated to a native JNI module (NDK/CMake build).
+  # These are the last pure-Kotlin, AGP-9-compatible versions.
+  path_provider_android: 2.2.16
+  shared_preferences_android: 2.4.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
